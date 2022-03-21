@@ -2,41 +2,75 @@ version: "3.0"
 
 intents:
   - greet
-  - inform
   - goodbye
   - affirm
   - deny
-  - bot_challenge
+  - show_trips_departure
+  - show_trips_departure_city
+  - show_trips_arrival_departure
+  - express_departure_city
+#  - reserve_trip
 
 entities:
-  - choice
+#  - i_city
+  - d_city
+  - a_city
+  - d_time
 
 slots:
-  choice:
-    type: categorical
-    values:
-      - rock
-      - paper
-      - scissors
+  # info_city:
+  #   type: text
+  #   mappings:
+  #   - type: from_entity
+  #     entity: i_city
+  departure_city:
+    type: text
     mappings:
     - type: from_entity
-      entity: choice
+      entity: d_city
+  arrival_city:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: a_city
+  departure_time:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: d_time
+
 
 responses:
-  utter_play:
-  - text: "Tap rock paper scissors to play"
+  utter_greet:
+  - text: "Hello there!"
 
-  utter_play_again:
-  - text: "Do you want to play again?"
+  utter_welcome:
+  - text: |
+          Hello there!
+          How can I help you?
+
+  utter_which_info_city:
+  - text: |
+          What city are you interested in?
+
+  utter_which_departure_city:
+  - text: |
+          Do you have a departure city in mind?
+
+  utter_which_arrival_city:
+  - text: |
+          What city are you headed to?
 
   utter_goodbye:
   - text: "Bye"
 
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  utter_remember:
+  - text: "The value has been saved "
+
 
 actions:
-  - action_play_rps
+  - action_display_trips
+  - action_display_seats
 
 session_config:
   session_expiration_time: 60

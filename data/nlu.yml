@@ -2,12 +2,6 @@ version: "3.0"
 
 nlu:
 
-- intent: inform
-  examples: |
-    - [rock](choice)
-    - [paper](choice)
-    - [scissors](choice)
-
 - intent: greet
   examples: |
     - hey
@@ -56,9 +50,57 @@ nlu:
     - no way
     - not really
 
-- intent: bot_challenge
+- intent: show_trips_departure
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - Available trips
+    - I want to see available trips
+    - I want to see your trips
+    - I would like to know which voyages are available
+    - Show me the available trips
+
+- intent: show_trips_departure_city
+  examples: |
+    - I want to see available trips from [London](d_city)
+    - I want to see available trips from [Paris](d_city)
+    - I want to see available trips from [Barcelona](d_city)
+    - I want to go from [Nantes](d_city)
+    - I want to see available trips from [Amsterdam](d_city)
+    - I want to go from [Munich](d_city)
+    - I want to go from [Moscow](d_city)
+
+
+
+#- intent: express_arrival_city
+#  examples: |
+#    - I want to go to [London](a_city)
+#    - I want to travel to [Barcelona](a_city)
+#    - I want to arrive to [Amsterdam](a_city)
+
+- intent: show_trips_arrival_departure
+  examples: |
+    - I want to see the available seats and prices from [Paris](d_city) to [London](a_city) at [8:00](d_time)
+    - I want to see the available seats from [Paris](d_city) to [London](a_city) at [12:00](d_time)
+    - I want to see the available prices from [Paris](d_city) to [London](a_city) at [16:00](d_time)
+
+- intent: express_departure_city
+  examples: |
+    - [London](d_city)
+    - [Paris](d_city)
+    - [Barcelona](d_city)
+    - [Nantes](d_city)
+#     - [Amsterdam](a_city)
+#     - [Munich](a_city)
+#     - [Moscow](a_city)
+
+#- intent: reserve_trip
+#  examples: |
+#    - I want to reserve a trip
+#    - I want to go to London
+#    - I want to go to Amsterdam
+#    - I want to travel
+#    - I want a ticket
+#    - I want to travel
+
+
+
+

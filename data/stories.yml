@@ -2,22 +2,37 @@ version: "3.0"
 
 stories:
 
-- story: play rock paper scissors
+- story:  story
   steps:
   - intent: greet
-  - action: utter_play
-  - intent: inform
-  - action: action_play_rps
-  - action: utter_play_again
-
-- story: play again
+  - action: utter_welcome
+  
+- story: display trips
   steps:
-  - action: utter_play_again
-  - intent: affirm
-  - action: utter_play
+  - intent: show_trips_departure
+  - action: utter_which_info_city
+  - intent: express_departure_city
+  - action: action_display_trips
 
-- story: don't play
+- story: display trips with city
   steps:
-  - action: utter_play_again
-  - intent: deny
-  - action: utter_goodbye
+  - intent: show_trips_departure_city
+  - action: action_display_trips
+
+- story: show me available seats and prices
+  steps:
+  - intent: show_trips_arrival_departure
+  - action: action_display_seats  
+
+#- story: reserve trip
+  #steps:
+  #- intent: reserve_trip
+  #- action: utter_which_departure_city
+  #- intent: express_departure_city
+  #- action: utter_which_arrival_city
+  #- intent: express_arrival_city
+  #- action: action_display_selected
+
+
+  
+
